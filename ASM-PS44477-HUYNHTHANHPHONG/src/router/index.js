@@ -4,6 +4,9 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Index from '../components/index.vue'
 import login from '../components/login.vue'
 import register from '../components/register.vue'
+import profile from '../components/Profile.vue'
+
+
 // (nếu chưa làm các trang khác thì tạm COMMENT)
 
 // import Login from '../components/Login.vue'
@@ -13,6 +16,7 @@ const routes = [
   { path: '/', component: Index },
   { path: '/login', component: login },
   { path: '/register', component: register },
+  { path: '/profile', component: profile },
   // { path: '/login', component: Login },
 ]
 
