@@ -22,7 +22,7 @@
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="/profile">Tài Khoản</a></li>
-            <li><a class="dropdown-item" href="#">Đăng Bài</a></li>
+            <li><a class="dropdown-item" href="/create-post">Đăng Bài</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">Đăng Xuất</a></li>
           </ul>

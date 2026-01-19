@@ -6,6 +6,7 @@ import login from '../components/login.vue'
 import register from '../components/register.vue'
 import profile from '../components/Profile.vue'
 import postDetail from '../components/PostDetail.vue'
+import createPost from '../components/createPost.vue' 
 
 
 // (nếu chưa làm các trang khác thì tạm COMMENT)
@@ -19,6 +20,7 @@ const routes = [
   { path: '/register', component: register },
   { path: '/profile', component: profile },
   { path: '/post-detail', component: postDetail },
+  { path: '/create-post', component: createPost },
   // { path: '/login', component: Login },
 ]
 
