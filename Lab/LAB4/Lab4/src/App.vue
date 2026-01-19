@@ -1,5 +1,7 @@
 <script setup>
-import HelloWorld from './components/bai2.vue'
+import HelloWorld from './components/HelloWorld.vue'
+import Bai3 from './components/Bai3.vue'; 
+import Bai4 from './components/Bai4.vue';
 </script>
 
 <template>
@@ -11,7 +13,9 @@ import HelloWorld from './components/bai2.vue'
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
   </div> -->
-  <HelloWorld msg="26 - Huỳnh Thanh Phong" />
+  <!-- <HelloWorld msg="26 - Huỳnh Thanh Phong" />
+    <Bai3/>  -->
+    <Bai4/>
 </template>
 
 <style scoped>
