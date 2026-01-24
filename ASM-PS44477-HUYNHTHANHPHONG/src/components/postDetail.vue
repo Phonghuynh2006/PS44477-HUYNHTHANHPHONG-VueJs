@@ -1,10 +1,8 @@
 <template>
-  <div class="bg-light">
 
 
-
-    <!-- MAIN CONTENT -->
-    <div class="container py-5">
+  <!-- MAIN CONTENT -->
+    <div class="container">
 
       <!-- BACK BUTTON -->
       <div class="mb-4">
@@ -94,7 +92,7 @@ Thực hiện Công điện số 225/CĐ-TTg ngày 20/11/2025 của Thủ tướ
 
 
 
-  </div>
+
 </template>
 
 

@@ -19,7 +19,7 @@ const routes = [
   { path: '/login', component: login },
   { path: '/register', component: register },
   { path: '/profile', component: profile },
-  { path: '/post-detail', component: postDetail },
+  { path: '/postDetail', component: postDetail },
   { path: '/create-post', component: createPost },
   // { path: '/login', component: Login },
 ]

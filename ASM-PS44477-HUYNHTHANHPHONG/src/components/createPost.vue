@@ -1,22 +1,11 @@
 <template>
-  <div class="container py-5">
+  <div class="container">
 
-    <!-- Breadcrumb -->
-    <nav class="mb-3 text-secondary small">
-      <span>Dashboard</span> /
-      <span>Bài viết</span> /
-      <strong>Tạo bài viết mới</strong>
-    </nav>
+      <h1 class="text-center">Tạo bài viết mới</h1>
 
-    <!-- Page Title -->
-    <div class="d-flex justify-content-between align-items-center mb-4">
-      <h1 class="fw-bold">Tạo bài viết mới</h1>
-    </div>
-
-    <div class="row g-4">
-
+    <div class="row">
       <!-- LEFT FORM -->
-      <div class="col-lg-8 d-flex flex-column gap-4">
+      <div class="col-md-8">
 
         <!-- Title -->
         <div class="card shadow-sm">
@@ -29,7 +18,7 @@
             >
           </div>
         </div>
-
+        <br>
         <!-- Content -->
         <div class="card shadow-sm">
           <div class="card-body">
@@ -45,14 +34,13 @@
       </div>
 
       <!-- RIGHT SIDEBAR -->
-      <div class="col-lg-4 d-flex flex-column gap-4">
+      <div class="col-md-4">
 
         <!-- Featured Image -->
-        <div class="card shadow-sm">
+        <div class="card">
           <div class="card-body">
-            <h5 class="fw-bold mb-3">Ảnh nổi bật</h5>
-
-            <label class="w-100">
+            <h5 class="fw-bold mb-3">Tải ảnh lên</h5>
+            <!-- <label class="w-100">
               <div
                 class="border border-2 border-secondary border-dashed rounded
                        text-center py-5 text-secondary"
@@ -62,13 +50,17 @@
                 <small>Hỗ trợ PNG, JPG, GIF</small>
               </div>
               <input type="file" class="d-none">
-            </label>
+            </label> -->
+<div>
+  <!-- <label for="formFileLg" class="form-label">tải ảnh lên</label> -->
+  <input class="form-control form-control-lg" id="formFileLg" type="file">
+</div>
 
           </div>
         </div>
 
         <!-- Summary -->
-        <div class="card shadow-sm">
+        <div class="card">
           <div class="card-body">
             <label class="form-label fw-bold">Tóm tắt</label>
             <textarea
@@ -78,7 +70,7 @@
             ></textarea>
           </div>
         </div>
-
+        <br>
         <!-- Buttons -->
         <div class="d-flex gap-2">
           <button class="btn btn-outline-secondary w-50">Lưu nháp</button>

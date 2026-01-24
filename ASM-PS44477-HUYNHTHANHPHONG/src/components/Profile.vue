@@ -1,18 +1,12 @@
 <template>
-  <div class="bg-light">
-
-    <div class="container py-5">
-
+    <div class="container">
       <!-- TIÊU ĐỀ -->
-      <div class="mb-4">
-        <h1 class="fw-bold display-6">Trang cá nhân</h1>
-      </div>
+        <h1 class="text-center">Trang cá nhân</h1>
 
-      <div class="row g-4">
-
+      <div class="row">
         <!-- CỘT TRÁI – ẢNH & THÔNG TIN NGẮN -->
         <div class="col-md-4">
-          <div class="card shadow-sm border-0">
+          <div class="card">
             <div class="card-body text-center">
 
               <img
@@ -21,23 +15,19 @@
                 width="150"
                 height="150"
               />
-
               <h4 class="fw-bold">phonghuynh</h4>
               <p class="text-muted">@phong</p>
-
               <button class="btn btn-outline-primary w-100 mt-3">
                 Tải ảnh mới
               </button>
-
             </div>
           </div>
         </div>
 
         <!-- CỘT PHẢI – THÔNG TIN CHI TIẾT -->
-        <div class="col-md-8 d-flex flex-column gap-4">
-
+        <div class="col-md-8">
           <!-- THÔNG TIN CƠ BẢN -->
-          <div class="card shadow-sm border-0">
+          <div class="card">
             <div class="card-body">
 
               <h5 class="fw-bold mb-4">Thông tin cá nhân</h5>
@@ -80,13 +70,14 @@
 
             </div>
           </div>
+        </div>
 
+      </div>
+<hr>
           <!-- ĐỔI MẬT KHẨU -->
-          <div class="card shadow-sm border-0">
+          <div class="card">
             <div class="card-body">
-
               <h5 class="fw-bold mb-4">Đổi mật khẩu</h5>
-
               <form class="row g-3">
 
                 <div class="col-12">
@@ -107,17 +98,9 @@
                 <div class="col-12 d-flex justify-content-end pt-3 border-top">
                   <button type="submit" class="btn btn-primary">Cập nhật mật khẩu</button>
                 </div>
-
               </form>
-
             </div>
           </div>
-
-        </div>
-
-      </div>
-
     </div>
 
-  </div>
 </template>
