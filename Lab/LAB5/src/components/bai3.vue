@@ -1,5 +1,5 @@
 <template>
-  <div class="col-sm-8">
+  <!-- <div class="col-sm-8"> -->
     <h1>Thông tin cá nhân</h1>
 
     <form>
@@ -25,12 +25,12 @@
       <p><strong>Tuổi:</strong> {{ thongtin.tuoi }}</p>
       <p><strong>Email:</strong> {{ thongtin.email }}</p>
     </div>
-  </div>
+  <!-- </div> -->
 </template>
 
 <script setup>
 import { reactive } from 'vue'
-
+// Khởi tạo đối tượng thông tin người dùng sử dụng reactive để tạo reactivity
 const thongtin = reactive({
   hoten: '',
   tuoi: null,

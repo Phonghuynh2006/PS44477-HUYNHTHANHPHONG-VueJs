@@ -1,7 +1,7 @@
 <template>
-  <div class="p-3">
+  <div>
     <input v-model="nhapdulieu" placeholder="Nhập dữ liệu nhanh lên" />
-    <p class="text-warning">Giá trị bạn nhập: {{ nhapdulieu }}</p>
+    <p>Giá trị bạn nhập: {{ nhapdulieu }}</p>
   </div>
 </template>
 

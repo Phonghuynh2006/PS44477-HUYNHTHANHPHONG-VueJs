@@ -1,32 +1,13 @@
 <template>
   <div class="mb-4">
     <h2 class="mb-3">Tạo bài viết mới</h2>
-
     <div class="mb-3">
-      <input 
-        v-model="tieude" 
-        class="form-control" 
-        placeholder="Tiêu đề bài viết" 
-      />
+      <input v-model="tieude" placeholder="Tiêu đề bài viết"/>
+      <br>
+      <input v-model="tacgia" placeholder="Tên tác giả" />
+      <br>
+      <textarea v-model="noidung" placeholder="Nội dung bài viết"></textarea>
     </div>
-
-    <div class="mb-3">
-      <input 
-        v-model="tacgia" 
-        class="form-control" 
-        placeholder="Tên tác giả" 
-      />
-    </div>
-
-    <div class="mb-3">
-      <textarea 
-        v-model="noidung" 
-        class="form-control" 
-        rows="4"
-        placeholder="Nội dung bài viết"
-      ></textarea>
-    </div>
-
     <button class="btn btn-primary" @click="submitPost">Đăng bài</button>
   </div>
 </template>
@@ -34,7 +15,7 @@
 <script setup>
 import { ref } from 'vue'
 
-// sự kiện add-post
+// sự kiện 
 const emit = defineEmits(['add-post'])
 
 const tieude = ref('')
@@ -47,9 +28,8 @@ function submitPost() {
       tieude: tieude.value,
       tacgia: tacgia.value,
       noidung: noidung.value,
-      textColor: '#ffffff'
     }
-
+// phát sự kiện
     emit('add-post', newPost)
 
     // reset
@@ -60,6 +40,26 @@ function submitPost() {
 }
 </script>
 
+<style>
+input,
+textarea {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+</style>
 
 
 

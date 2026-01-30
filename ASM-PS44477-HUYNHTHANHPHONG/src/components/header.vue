@@ -15,9 +15,9 @@
         <li class="nav-item">
           <a class="nav-link" href="/login">Đăng Nhập</a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link" href="/register">Đăng Ký</a>
-        </li>
+        </li> -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Thông Tin Khác
