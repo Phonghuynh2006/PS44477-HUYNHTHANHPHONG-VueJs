@@ -37,4 +37,5 @@ const items = ref([
     image: "https://hoanghamobile.com/tin-tuc/wp-content/uploads/2024/11/tai-hinh-nen-dep-mien-phi.jpg"
   }
 ]);
+
 </script>
