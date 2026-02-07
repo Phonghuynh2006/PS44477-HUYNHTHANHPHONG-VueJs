@@ -3,9 +3,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 // import component
 import Index from '../components/index.vue'
 import login from '../components/login.vue'
-import register from '../components/register.vue'
 import profile from '../components/Profile.vue'
-import postDetail from '../components/PostDetail.vue'
+import postDetail from '../components/postDetail.vue'
 import createPost from '../components/createPost.vue' 
 
 
@@ -17,9 +16,10 @@ import createPost from '../components/createPost.vue'
 const routes = [
   { path: '/', component: Index },
   { path: '/login', component: login },
-  { path: '/register', component: register },
   { path: '/profile', component: profile },
-  { path: '/postDetail', component: postDetail },
+  // { path: '/postDetail', component: postDetail },
+    // tham khao
+  { path: '/post/:id', component: postDetail },
   { path: '/create-post', component: createPost },
   // { path: '/login', component: Login },
 ]

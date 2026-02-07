@@ -9,11 +9,11 @@ import Test1 from './components/test1.vue';
 
 <template>
 
-    <!-- <Bai1 />
+    <Bai1 />
 
     <Bai2 />
     <Bai3 />
-    <bai4 /> -->
+    <bai4 />
     <Test1 />
 </template>
 

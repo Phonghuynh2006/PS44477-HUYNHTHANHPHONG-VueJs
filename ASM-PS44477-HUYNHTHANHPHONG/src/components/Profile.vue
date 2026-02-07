@@ -1,106 +1,163 @@
 <template>
-    <div class="container">
-      <!-- TIÊU ĐỀ -->
-        <h1 class="text-center">Trang cá nhân</h1>
+  <div class="container row mt-4">
+    <!-- BÊN TRÁI -->
+    <div class="col-6">
+      <h2>Thông tin cá nhân</h2>
 
-      <div class="row">
-        <!-- CỘT TRÁI – ẢNH & THÔNG TIN NGẮN -->
-        <div class="col-md-4">
-          <div class="card">
-            <div class="card-body text-center">
-
-              <img
-                src="https://yeudialy.edu.vn/upload/2025/05/anime-chibi-nam03.webp"
-                class="rounded-circle mb-3"
-                width="150"
-                height="150"
-              />
-              <h4 class="fw-bold">phonghuynh</h4>
-              <p class="text-muted">@phong</p>
-              <button class="btn btn-outline-primary w-100 mt-3">
-                Tải ảnh mới
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- CỘT PHẢI – THÔNG TIN CHI TIẾT -->
-        <div class="col-md-8">
-          <!-- THÔNG TIN CƠ BẢN -->
-          <div class="card">
-            <div class="card-body">
-
-              <h5 class="fw-bold mb-4">Thông tin cá nhân</h5>
-
-              <form class="row g-3">
-
-                <!-- Họ tên -->
-                <div class="col-sm-6">
-                  <label class="form-label">Họ và tên</label>
-                  <input type="text" class="form-control" value="phonghuynh" />
-                </div>
-
-                <!-- Username -->
-                <div class="col-sm-6">
-                  <label class="form-label">Tên người dùng</label>
-                  <input type="text" class="form-control" value="@phonghuynh" readonly />
-                </div>
-
-                <!-- Email -->
-                <div class="col-12">
-                  <label class="form-label">Email</label>
-                  <input type="email" class="form-control" value="phonghuynh@gmail.com" />
-                </div>
-
-                <!-- Giới thiệu -->
-                <div class="col-12">
-                  <label class="form-label">Giới thiệu bản thân</label>
-                  <textarea rows="4" class="form-control">
-                    phonghuynh
-                  </textarea>
-                </div>
-
-                <!-- Nút -->
-                <div class="col-12 d-flex justify-content-end gap-2 pt-3 border-top">
-                  <button type="button" class="btn btn-outline-secondary">Hủy</button>
-                  <button type="submit" class="btn btn-primary" disabled>Lưu thay đổi</button>
-                </div>
-
-              </form>
-
-            </div>
-          </div>
-        </div>
-
+      <div class="mb-3">
+        <label>Họ và tên</label>
+        <input type="text" class="form-control" v-model="fullname">
       </div>
-<hr>
-          <!-- ĐỔI MẬT KHẨU -->
-          <div class="card">
-            <div class="card-body">
-              <h5 class="fw-bold mb-4">Đổi mật khẩu</h5>
-              <form class="row g-3">
 
-                <div class="col-12">
-                  <label class="form-label">Mật khẩu hiện tại</label>
-                  <input type="password" class="form-control" placeholder="Nhập mật khẩu hiện tại" />
-                </div>
+      <div class="mb-3">
+        <label>Email</label>
+        <input type="text" class="form-control" v-model="mail">
+      </div>
 
-                <div class="col-12">
-                  <label class="form-label">Mật khẩu mới</label>
-                  <input type="password" class="form-control" placeholder="Nhập mật khẩu mới" />
-                </div>
+      <div class="mb-3">
+        <label>Link ảnh</label>
+        <input type="text" class="form-control" v-model="img">
+      </div>
 
-                <div class="col-12">
-                  <label class="form-label">Nhập lại mật khẩu mới</label>
-                  <input type="password" class="form-control" placeholder="Xác nhận mật khẩu mới" />
-                </div>
+      <button class="btn btn-primary" @click="updateUser">Cập nhật</button>
 
-                <div class="col-12 d-flex justify-content-end pt-3 border-top">
-                  <button type="submit" class="btn btn-primary">Cập nhật mật khẩu</button>
-                </div>
-              </form>
-            </div>
-          </div>
+      <hr>
+
+      <h2>Đổi mật khẩu</h2>
+
+      <div class="mb-3">
+        <label>Mật khẩu cũ</label>
+        <input type="password" class="form-control" v-model="oldPassword">
+      </div>
+
+      <div class="mb-3">
+        <label>Mật khẩu mới</label>
+        <input type="password" class="form-control" v-model="newPassword">
+      </div>
+
+      <button class="btn btn-primary" @click="updatePassword">
+        Đổi mật khẩu
+      </button>
     </div>
 
+    <!-- BÊN PHẢI -->
+    <div class="col-6 d-flex align-items-center">
+      <div class="card" style="width: 18rem;">
+        <img :src="img" class="card-img-top" />
+      </div>
+    </div>
+  </div>
 </template>
+
+<script setup>
+import { ref, onMounted } from 'vue'
+import axios from 'axios'
+
+import { useRouter } from 'vue-router'
+const router = useRouter()
+
+// Lấy danh sách bài viết
+const user11 = ref([]); 
+const fetchuser = async () => { 
+    try { 
+        const response = await axios.get('http://localhost:3000/user'); 
+        user11.value = response.data; 
+    } catch (error) { 
+        console.error('Lỗi khi lấy dữ liệu:', error); 
+    } 
+}; 
+ 
+onMounted(fetchuser); 
+
+
+// user
+const id = ref(null)
+const fullname = ref('')
+const mail = ref('')
+const img = ref('')
+const matkhau = ref('')
+
+
+// mật khẩu
+const oldPassword = ref('')
+const newPassword = ref('')
+
+// tham khảo
+onMounted(() => {
+  const savedUser = localStorage.getItem('user')
+
+  if (!savedUser) {
+    router.push('/login')
+    return
+  }
+
+  const u = JSON.parse(savedUser)
+
+  id.value = u.id
+  fullname.value = u.fullname
+  mail.value = u.mail
+  img.value = u.img
+  matkhau.value = u.matkhau
+})
+
+
+// Cập nhật thông tin
+const updateUser = async () => {
+  try {
+    await axios.put(`http://localhost:3000/user/${id.value}`, {
+      fullname: fullname.value,
+      mail: mail.value,
+      img: img.value,
+      matkhau: matkhau.value
+    })
+
+    localStorage.setItem('user', JSON.stringify({
+      id: userId.value,
+      fullname: fullname.value,
+      mail: mail.value,
+      img: img.value,
+      matkhau: matkhau.value
+    }))
+
+    alert('Cập nhật thông tin thành công!')
+  } catch (error) {
+    console.error('Lỗi khi cập nhật user:', error)
+  }
+}
+
+
+// Cập nhật mật khẩu
+const updatePassword = async () => {
+  if (oldPassword.value !== matkhau.value) {
+    alert('Mật khẩu cũ không đúng!')
+    return
+  }
+
+  try {
+    matkhau.value = newPassword.value
+
+    await axios.put(`http://localhost:3000/user/${id.value}`, {
+      fullname: fullname.value,
+      mail: mail.value,
+      img: img.value,
+      matkhau: matkhau.value
+    })
+
+    localStorage.setItem('user', JSON.stringify({
+      id: id.value,
+      fullname: fullname.value,
+      mail: mail.value,
+      img: img.value,
+      matkhau: matkhau.value
+    }))
+
+    alert('Đổi mật khẩu thành công!')
+    oldPassword.value = ''
+    newPassword.value = ''
+  } catch (error) {
+    console.error('Lỗi khi đổi mật khẩu:', error)
+  }
+}
+
+
+</script>

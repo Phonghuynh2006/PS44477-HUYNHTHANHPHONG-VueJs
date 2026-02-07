@@ -1,4 +1,7 @@
 <template>
+  <div class="row mb-4">
+
+      <div class="col-sm-6">
       <form @submit.prevent="submitForm" class="col-sm-4">
         <h3>Thêm học sinh</h3>
         <div class="mb-3">
@@ -10,12 +13,21 @@
           <input type="number" min="0" max="10" class="form-control" v-model="student.score" id="score" required>
         </div>
         <div class="mb-3">
+          <label for="score">tình trạng</label>
+              <p v-if="student.score >= 5">đậu</p>
+              <p v-else>rớt</p>
+        </div>
+
+        <div class="mb-3">
           <label for="dob">Ngày sinh</label>
           <input type="date" class="form-control" v-model="student.dob" id="dob" required>
         </div>
         <button class="btn btn-success">{{ isEditing ? 'Cập nhật' : 'Thêm' }}</button>
       </form>
+      </div>
 
+
+      <div class="col-sm-6">
         <h3>Danh sách học sinh</h3>
         <table class="table table-hover">
           <thead>
@@ -39,6 +51,13 @@
             </tr>
           </tbody>
         </table>
+
+      </div>
+
+
+  </div>
+
+
 
 </template>
 
