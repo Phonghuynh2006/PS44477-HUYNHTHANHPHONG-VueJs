@@ -105,6 +105,7 @@ onMounted(() => {
 const updateUser = async () => {
   try {
     await axios.put(`http://localhost:3000/user/${id.value}`, {
+      id: id.value,
       fullname: fullname.value,
       mail: mail.value,
       img: img.value,
@@ -112,7 +113,7 @@ const updateUser = async () => {
     })
 
     localStorage.setItem('user', JSON.stringify({
-      id: userId.value,
+      id: id.value,
       fullname: fullname.value,
       mail: mail.value,
       img: img.value,
@@ -137,6 +138,7 @@ const updatePassword = async () => {
     matkhau.value = newPassword.value
 
     await axios.put(`http://localhost:3000/user/${id.value}`, {
+  id: id.value,
       fullname: fullname.value,
       mail: mail.value,
       img: img.value,

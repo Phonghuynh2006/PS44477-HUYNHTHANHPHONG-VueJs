@@ -1,35 +1,49 @@
 <template>
-  <div class="p-4">
-    <h3>Quản lý công việc</h3>
+  <div class="col">
+    <h3 class="text-center">Quản lý công việc</h3>
 
-    <form @submit.prevent="addJob">
-      <input v-model="newJob" placeholder="Nhập công việc" />
-      <button>Thêm công việc</button>
+    <form @submit.prevent="addList">
+      <div class="mb-3">
+        <label class="form-label">Tên công việc:</label>
+        <input 
+          type="text" 
+          class="form-control" 
+          v-model="newToDo" 
+          placeholder="Nhập tên công việc"
+        >
+      </div>
+      <button type="submit" class="btn btn-primary">Thêm công việc</button>
     </form>
 
-    <ul>
-      <li v-for="(job, index) in jobs" :key="index">
+    <ul class="list-group mt-4">
+      <li 
+        class="list-group-item d-flex justify-content-between align-items-center" 
+        v-for="(job, index) in jobs" 
+        :key="index"
+      >
         {{ job }}
-        <button @click="removeJob(index)">Xóa</button>
+        <button class="btn btn-danger btn-sm" @click="removeList(index)">Xóa</button>
       </li>
     </ul>
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref } from 'vue';
 
-const newJob = ref('')
-const jobs = ref([])
 
-const addJob = () => {
-  if (newJob.value.trim() !== '') {
-    jobs.value.push(newJob.value)
-    newJob.value = ''
+const newToDo = ref('');
+const jobs = ref(['Ăn sáng', 'Đi học', 'Chơi bóng rổ']);
+
+const addList = () => {
+  if (newToDo.value.trim()) { // Loại bỏ khoảng trắng ở đầu và cuối của chuỗi
+    jobs.value.push(newToDo.value.trim());
+    newToDo.value = ''; // Reset input field
   }
-}
+};
 
-const removeJob = (index) => {
-  jobs.value.splice(index, 1)
-}
+
+const removeList = (index) => {
+  jobs.value.splice(index, 1);
+};
 </script>

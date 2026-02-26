@@ -88,6 +88,7 @@ const addPost = async () => {
             title: title.value, 
             content: content.value,
             image: image.value
+            // userId: currentUser.value.id //
         }); 
         title.value = ''; 
         content.value = '';
@@ -134,5 +135,15 @@ const resetForm = () => {
     image.value = '';
     selectedPostId.value = null;
 };
+
+const currentUser = ref(null)
+
+onMounted(() => {
+  const savedUser = localStorage.getItem('user')
+  if (savedUser) {
+    currentUser.value = JSON.parse(savedUser)
+  }
+})
+
 
 </script> 

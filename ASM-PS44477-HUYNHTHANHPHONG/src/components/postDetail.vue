@@ -13,12 +13,6 @@
       <h1 class="fw-bold display-5">
         {{ post.title }}
       </h1>
-
-      <div class="d-flex justify-content-center gap-3 mt-3 text-secondary">
-        <span>Tác giả: Admin</span>
-        <span>|</span>
-        <span>Ngày đăng: 2026</span>
-      </div>
     </div>
 
     <!-- POST IMAGE -->
@@ -37,39 +31,11 @@
       </p>
     </div>
 
-    <!-- COMMENTS (KHÔNG HOẠT ĐỘNG) -->
+
     <div class="border-top pt-5">
-      <h2 class="fw-bold mb-4">Bình luận (2)</h2>
+      <h2 class="fw-bold mb-4">Bình luận</h2>
 
-      <!-- COMMENT 1 -->
-      <div class="d-flex gap-3 mb-4">
-        <div class="bg-secondary bg-opacity-25 rounded-circle d-flex align-items-center justify-content-center"
-             style="width: 48px; height: 48px;">
-          <span class="text-secondary fs-4">👤</span>
-        </div>
 
-        <div>
-          <p class="fw-bold mb-1">phong</p>
-          <p class="text-muted small mb-2">2 ngày trước</p>
-          <p>Bài viết tuyệt vời! Rất nhiều thông tin hữu ích.</p>
-        </div>
-      </div>
-
-      <!-- COMMENT 2 -->
-      <div class="d-flex gap-3 mb-4">
-        <div class="bg-secondary bg-opacity-25 rounded-circle d-flex align-items-center justify-content-center"
-             style="width: 48px; height: 48px;">
-          <span class="text-secondary fs-4">👤</span>
-        </div>
-
-        <div>
-          <p class="fw-bold mb-1">phong1</p>
-          <p class="text-muted small mb-2">1 ngày trước</p>
-          <p>Hướng dẫn rất rõ ràng và dễ hiểu.</p>
-        </div>
-      </div>
-
-      <!-- COMMENT FORM (FAKE) -->
       <h3 class="fw-bold mt-5 mb-3">Để lại bình luận</h3>
 
       <textarea

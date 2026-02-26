@@ -1,48 +1,79 @@
 <template>
-  <div v-if="!isLoggedIn">
-    <h3>Đăng nhập</h3>
-
+  <div v-if="!isLoggedIn" class="col">
+Form Đăng nhập
     <form @submit.prevent="login">
-      <input v-model="email" placeholder="Email" />
-      <p v-if="emailError" style="color:red">{{ emailError }}</p>
+      <div class="mb-3 mt-3">
+        <label>Email:</label>
+        <input 
+          type="email" 
+          class="form-control" 
+          v-model="email" 
+          placeholder="Nhập email"
+        >
+        <p v-if="emailError" style="color: red;">{{ emailError }}</p>
+      </div>
 
-      <input type="password" v-model="password" placeholder="Mật khẩu" />
-      <p v-if="passwordError" style="color:red">{{ passwordError }}</p>
+      <div class="mb-3">
+        <label>Mật khẩu:</label>
+        <input 
+          type="password" 
+          class="form-control" 
+          v-model="password" 
+          placeholder="Nhập mật khẩu"
+        >
+        <p v-if="passwordError" style="color: red;">{{ passwordError }}</p>
+      </div>
 
-      <button>Đăng nhập</button>
+      <button type="submit" class="btn btn-primary">Đăng nhập</button>
     </form>
   </div>
 
-  <div v-else>
-    <h3>Chào mừng {{ email }}</h3>
-    <button @click="logout">Đăng xuất</button>
+  <div v-else class="col-sm-5">
+    Chào mừng, {{ email }}!
+    <button @click="logout" class="btn btn-primary">Đăng xuất</button>
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref } from 'vue';
 
-const isLoggedIn = ref(false)
-const email = ref('')
-const password = ref('')
-const emailError = ref('')
-const passwordError = ref('')
+const isLoggedIn = ref(false);
+const email = ref('');
+const password = ref('');
+
+const emailError = ref('');
+const passwordError = ref('');
+
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const login = () => {
-  emailError.value = ''
-  passwordError.value = ''
+  // Reset thông điệp lỗi
+  emailError.value = '';
+  passwordError.value = '';
 
-  if (!email.value) emailError.value = 'Email không được trống'
-  if (!password.value) passwordError.value = 'Mật khẩu không được trống'
-
-  if (!emailError.value && !passwordError.value) {
-    isLoggedIn.value = true
+  // Validate email
+  if (!email.value) {
+    emailError.value = 'Email là bắt buộc.';
+  } else if (!emailRegex.test(email.value)) {
+    emailError.value = 'Vui lòng nhập email hợp lệ.';
   }
-}
+
+  // Validate mật khẩu
+  if (!password.value) {
+    passwordError.value = 'Mật khẩu là bắt buộc.';
+  }
+
+  // Nếu không có lỗi, xử lý login
+  if (!emailError.value && !passwordError.value) {
+    isLoggedIn.value = true;
+  }
+};
 
 const logout = () => {
-  isLoggedIn.value = false
-  email.value = ''
-  password.value = ''
-}
+  isLoggedIn.value = false;
+  email.value = '';
+  password.value = '';
+  emailError.value = '';
+  passwordError.value = '';
+};
 </script>

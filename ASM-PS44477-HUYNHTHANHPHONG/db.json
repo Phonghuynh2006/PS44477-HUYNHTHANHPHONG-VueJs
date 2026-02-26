@@ -23,18 +23,30 @@
       "title": "Sân bay Tân Sơn Nhất dự kiến đón 145.000 hành khách/ngày dịp Tết Bính Ngọ 2026",
       "content": "Ngày 6/2, đại diện Cảng Hàng không quốc tế Tân Sơn Nhất cho biết, trong giai đoạn cao điểm Tết Nguyên đán Bính Ngọ (từ 14/2 đến 22/2/2026), sản lượng khai thác dự kiến tăng mạnh, trung bình khoảng 940 chuyến bay/ngày, tăng 25% so với lịch bay hiện tại và tăng 7% so với cùng kỳ năm 2025.",
       "image": "https://photo-baomoi.bmcdn.me/w700_r16x9/2026_02_06_294_54433756/b95f40294761ae3ff770.jpg.avif"
+    },
+    {
+      "id": "5fab",
+      "title": "Dòng người nghỉ Tết bắt đầu đổ về sân bay Tân Sơn Nhất",
+      "content": "TPO - Những ngày cận Tết Nguyên đán 2026, sân bay Tân Sơn Nhất bắt đầu ghi nhận lượng hành khách đông hơn ngày thường khi người dân từ TPHCM và các tỉnh phía Nam về quê sum họp gia đình.",
+      "image": "https://cdn.tienphong.vn/images/ade18ff662a0cdd153453c9fd0ad1e7cd6ccff7d3e3b0171751de25788ed30d04a2df40eb9fb314396d9ba34bc4cb3f2195c5fe6d520984eb09ce86f9b1c1fbb/9f5ef702c0084e561719.jpg"
+    },
+    {
+      "id": "e904",
+      "title": "hhi",
+      "content": "1234",
+      "image": "phonghuyynh"
     }
   ],
   "user": [
     {
-      "id": 1,
+      "id": "1",
       "fullname": "Huynh Thanh Phong",
       "mail": "huynhthanhphong@gmail.com",
       "matkhau": "123456",
       "img": "https://i.pinimg.com/736x/61/62/2e/61622ec8899cffaa687a8342a84ea525.jpg"
     },
     {
-      "id": 2,
+      "id": "2",
       "fullname": "Phonghuynh",
       "mail": "phonghuynh031226@gmail.com",
       "matkhau": "phonghuynh031226",

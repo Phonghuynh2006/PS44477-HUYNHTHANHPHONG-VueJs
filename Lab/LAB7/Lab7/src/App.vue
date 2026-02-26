@@ -10,14 +10,14 @@ import Bai4 from './components/Bai4.vue'
 
     <Bai1 />
 
-    <hr />
-    <Bai2 />
+    <!-- <hr />
+    <Bai2 /> -->
 
-    <hr />
-    <Bai3 />
+    <!-- <hr />
+    <Bai3 /> -->
 
-    <hr />
-    <Bai4 />
+    <!-- <hr />
+    <Bai4 /> -->
 </template>
 
 <style scoped>
